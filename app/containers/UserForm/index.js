@@ -27,13 +27,7 @@ class UserForm extends React.Component {
     //console.log(memberForm);   
     return(   
         <Grid>
-          <Form model="memberInfoForm.member" 
-          validators={{
-            '': {
-              required:(val)=> val && val.length>0,
-              passwordsMatch: (vals) => vals.pass === vals.confirmpass,
-            },
-          }}>
+          <Form model="memberInfoForm.member">
             <Row>
               <Steps review={ memberForm }/>  
             </Row>     

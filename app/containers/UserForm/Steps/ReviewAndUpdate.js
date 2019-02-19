@@ -2,20 +2,23 @@ import React from 'react';
 import { Row, Col, Grid } from 'react-bootstrap';
 import Button from '../../../components/Button/Button';
 
+import Redirect from 'react-router-dom';
 class ReviewAndUpdate extends React.Component {
-    constructor() {
-      super();
-      this.handleSubmit = this.handleSubmit.bind(this);
+    constructor(props) {
+      super(props);
+      this.state = {
+        redirect: false
+      }
     }
   
-    handleSubmit(evt) {
-      evt.preventDefault();
-      this.props.onSubmit();
+    
+    setRedirect = () => {
+      window.location.assign('/thank-you');
     }
-  
     render() {
       const items = this.props.staticText;
-       return(
+     
+        return(
         <Grid>
           <Row>
             <Col>
@@ -39,20 +42,18 @@ class ReviewAndUpdate extends React.Component {
               <Row>
                 <p></p>
               </Row>
-              <Row>              
+              <Row>        
+                   
               <Col md={6}> 
                 <Button buttonFunc={this.props.onPreviousClick}>Previous</Button>&nbsp; &nbsp; &nbsp; &nbsp;              
-                <Button buttonFunc={this.handleSubmit}>Checkout</Button>
+                <Button buttonFunc={this.setRedirect}>Checkout</Button>
               </Col>
               </Row>
             </Col>
           </Row>
         </Grid>
-       );      
+       );    
     }
   }
 
- 
-
-
-  export default (ReviewAndUpdate);
+  export default  (ReviewAndUpdate);

@@ -20,8 +20,8 @@ export default function App() {
   return (
     <div>
       <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route exact path="/detail" component={UserForm} />
+        <Route exact path="/thank-you" component={HomePage} />
+        <Route exact path="/" component={UserForm} />
         <Route component={NotFoundPage} />        
       </Switch>
       <GlobalStyle />

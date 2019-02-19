@@ -3,7 +3,6 @@ import MemberInfo from './MemberInfo';
 import MemberJobInfo from './MemberJobInfo';
 import ReviewAndUpdate from './ReviewAndUpdate';
 
-
 class Steps extends React.Component {
     constructor() {
         super();
@@ -17,7 +16,8 @@ class Steps extends React.Component {
           confirmpass: "",
           company: "",
           designation: "",
-          role: ""
+          role: "",
+          redirectToNewPage: false
         };
         this.goToNext = this.goToNext.bind(this);
         this.goToPrevious = this.goToPrevious.bind(this);
@@ -103,6 +103,7 @@ class Steps extends React.Component {
                 onPreviousClick = {this.goToPrevious}              
               />
             );
+            
             default: return null;
         }
         

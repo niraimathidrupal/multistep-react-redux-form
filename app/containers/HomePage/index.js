@@ -36,9 +36,9 @@ export default class HomePage extends React.PureComponent {
          <h1>
           <FormattedMessage {...messages.header} />
         </h1>
-        <div>
-          <FormattedMessage {...messages.maincontent} />
-        </div>
+        <h3>
+          <a href="/">Click here</a> to add more employee details
+        </h3>
       </div>
       </CenteredSection>
      

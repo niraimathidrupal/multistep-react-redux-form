@@ -10,11 +10,6 @@ export const scope = 'app.containers.HomePage';
 export default defineMessages({
   header: {
     id: `${scope}.header`,
-    defaultMessage: 'BoilerPlate Workaround Home Page'
-  },
-
-  maincontent: {
-    id: `${scope}.message`,
-    defaultMessage: 'User Details'
+    defaultMessage: 'Thank you! your details have been saved in local state'
   }
 });
