@@ -16,13 +16,7 @@ import languageProviderReducer from 'containers/LanguageProvider/reducer';
 export default function createReducer(injectedReducers = {}) {
   const rootReducer = combineReducers({
     language: languageProviderReducer,
-    ...injectedReducers,
-    myForms: combineForms({
-      users: fromJS({
-        username: '',
-        email: '',
-      })
-    }, 'myForms'),
+    ...injectedReducers,    
     memberInfoForm: combineForms({
       member: fromJS({
         memberInfo: fromJS({
