@@ -7,8 +7,9 @@ import { Field, Errors } from 'react-redux-form/lib/immutable';
   class MemberInfo extends React.Component{
     render(){
      
-      const requiredInput =this.props.isRequired;
+      const requiredInput = this.props.isRequired;
        return (<Row>
+         <Col md={6}>
         <h3>Employee Personal Information</h3>   
       
         <div className="field">
@@ -18,16 +19,13 @@ import { Field, Errors } from 'react-redux-form/lib/immutable';
             placeholder="First Name"
             modelvalue={this.props.fname}
             onChangeModel={this.props.onChangeFname}           
-            validators={ { requiredInput } }      
-            validateOn ="blur"   
-          />    
-          <Errors
-            model={this.props.fnamemodel}
-            show={true}
-            messages={{
-              requiredInput : 'Please provide first name.'
+            validators={{
+              required: val => val && val.length > 0,
             }}
-          />       
+            messages={{
+              required : 'First name is required'
+            }}
+          />               
         </div>
         <div className="field">
           <p></p>
@@ -37,63 +35,86 @@ import { Field, Errors } from 'react-redux-form/lib/immutable';
             placeholder="Last Name"
             modelvalue={this.props.lname}
             onChangeModel={this.props.onChangeLname}
-            validators={ requiredInput } 
-          />
-          <Errors
-            wrapper="span"
-            show={true}
-            model={this.props.lnamemodel}
+            validators={{
+              required: val => val && val.length > 0,
+            }}
             messages={{
-              requiredInput : 'Please provide last name.'
+              required : 'Last name is required'
             }}
           />
         </div>
         <div className="field">
           <p></p>
-          <label>Email</label>
+          <label>Email</label>          
           <ControlCustom
             modelname = {this.props.emailmodel}
             placeholder="Email Address"
             modelvalue={this.props.email}
             onChangeModel={this.props.onChangeEmail}
-            validators={ requiredInput }
-          />
-           <Errors
-            wrapper="span"
-            show={{ touched: true, focus: false }}
-            model={this.props.emailmodel}
+            validators={{
+              required: val => val && val.length > 0
+            }}      
             messages={{
-              isRequired : 'Please provide email address.'
+              required : 'Email is required'
             }}
-            />
-        </div>    
-        <div className="field">
-          <p></p>
-          <label>Experience</label>
-          <ControlCustom 
-            modelname= {this.props.passmodel}
-            placeholder="2 exp"
-            modelvalue={this.props.pass}
-            onChangeModel={this.props.onChangePass}
-           // validators= { passwordMatch }
-          />          
-        </div>   
-        <div>
-          <p></p>
-          <label>Doamin skills</label>
-          <ControlCustom 
-            modelname={this.props.confirmpassmodel}
-            placeholder="c, c++, react js, drupal.."
-            modelvalue={this.props.confirmpass}
-            onChangeModel={this.props.onChangeConfirmPass}
-           // validators={ passwordMatch }
           />
-          
-        </div> 
+        </div>    
+          <div className="field">
+            <p></p>
+            <label>Contact Address</label>                      
+          </div>   
+          <div>
+            <p></p>
+            <Row>
+            <Col md={6}>
+              <ControlCustom 
+                modelname={this.props.addressmodel1}
+                placeholder="Address line1"
+                modelvalue={this.props.address1}
+                onChangeModel={this.props.onChangeAddress1}
+              />
+            </Col>
+            <Col md={6}>
+              <ControlCustom 
+                modelname={this.props.addressmodel2}
+                placeholder="Address line2"
+                modelvalue={this.props.address2}
+                onChangeModel={this.props.onChangeAddress2}
+              />
+            </Col>
+            </Row>&nbsp; &nbsp;
+                        
+            <Row>
+            <Col md={3}>
+              <ControlCustom 
+                modelname={this.props.citymodel}
+                placeholder="City"
+                modelvalue={this.props.city}
+                onChangeModel={this.props.onChangeCity}
+              />
+            </Col>
+            <Col md={3}>
+              <ControlCustom 
+                modelname={this.props.statemodel}
+                placeholder="State"
+                modelvalue={this.props.stateval}
+                onChangeModel={this.props.onChangeStateVal}
+              />
+            </Col>
+            <Col md={5}>
+              <ControlCustom 
+                modelname={this.props.zipcodemodel}
+                placeholder="Zipcode"
+                modelvalue={this.props.zipcode}
+                onChangeModel={this.props.onChangeZipCode}
+              /> 
+            </Col>
+            </Row> &nbsp; &nbsp;     
+          </div> 
         <div className="button">
-          <p></p>
           <Button buttonFunc={this.props.onNextClick}>Next</Button>
         </div>
+        </Col>
         </Row>
         );
     }

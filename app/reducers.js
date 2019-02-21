@@ -23,16 +23,27 @@ export default function createReducer(injectedReducers = {}) {
           fname: '',
           lname: '',
           email: '',
-          pass: '',
-          confirmpass: ''
+          address1: '',
+          address2: '',
+          city:'',
+          state:'',
+          zipcode: ''
         }),
         jobInfo: fromJS({
           company:'',
           designation: '',
-          role: ''
+          role: '',
+          exp: '',
+          skills: ''
         }) 
       })
-    }, 'memberInfoForm')
+    }, 'memberInfoForm'),
+
+    forms: combineForms({
+      subscribe: fromJS({
+        email: '',
+      })
+     }, 'forms')
   });
 
   // Wrap the root reducer and return a new root reducer with router state

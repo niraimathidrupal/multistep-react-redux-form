@@ -29,6 +29,12 @@ class ReviewAndUpdate extends React.Component {
                 <p>First Name: {items.memberInfo.fname}</p>
                 <p>Last Name: {items.memberInfo.lname}</p>
                 <p>Email: {items.memberInfo.email}</p>
+                <p>Address:</p>
+                <p>{items.memberInfo.address1}</p>
+                <p>{items.memberInfo.address2}</p>
+                <p>{items.memberInfo.city}</p>
+                <p>{items.memberInfo.state}</p>
+                <p>{items.memberInfo.zipcode}</p>
                 <Button buttonFunc={this.props.onPersonalEdit}>Edit</Button>
               </Col>
               <Col md={6}>        
@@ -36,6 +42,8 @@ class ReviewAndUpdate extends React.Component {
                 <p>Company name: {items.jobInfo.company}</p>
                 <p>Designation: {items.jobInfo.designation}</p>
                 <p>Role: {items.jobInfo.role}</p>
+                <p>Experience: {items.jobInfo.exp}</p>
+                <p>Skills: {items.jobInfo.skills}</p>
                 <Button buttonFunc={this.props.onJobProfileEdit}>Edit</Button>
               </Col>
               </Row>

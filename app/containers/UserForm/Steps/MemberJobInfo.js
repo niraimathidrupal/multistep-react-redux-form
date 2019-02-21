@@ -1,16 +1,18 @@
 import React from "react";
 import Button from '../../../components/Button/Button';
-import Control from '../../../components/Control/Control';
+import ControlCustom from '../../../components/Control/Control';
+import { Row, Col } from 'react-bootstrap';
 
 class MemberJobInfo extends React.Component {  
     render() {
       return (
-        <div>
+        <Row>
+         <Col md={6}>
           <h3>Employee Job Details</h3>
           <div className="field">
             <p></p>
             <label>Company name</label>
-            <Control
+            <ControlCustom
               modelname = {this.props.companymodel}
               placeholder="Company Name"
               modelvalue={this.props.company}
@@ -20,7 +22,7 @@ class MemberJobInfo extends React.Component {
           <div className="field">
             <p></p>
             <label>Designation</label>
-            <Control
+            <ControlCustom
               modelname = {this.props.designationmodel}
               placeholder="Designation"
               modelvalue={this.props.designation}
@@ -30,19 +32,40 @@ class MemberJobInfo extends React.Component {
           <div className="field">
             <p></p>
             <label>Role</label>
-            <Control
+            <ControlCustom
               modelname = {this.props.rolemodel}
               placeholder="Role"
               modelvalue={this.props.role}
               onChangeModel={this.props.onChangeRole}
             />
-          </div>          
+          </div>   
+          <div className="field">
+            <p></p>
+            <label>Experience</label>
+            <ControlCustom 
+              modelname= {this.props.expmodel}
+              placeholder="2 exp"
+              modelvalue={this.props.exp}
+              onChangeModel={this.props.onChangeExp}
+            />          
+          </div>   
+          <div>
+            <p></p>
+            <label>Doamin skills</label>
+            <ControlCustom 
+              modelname={this.props.skillsmodel}
+              placeholder="c, c++, react js, drupal.."
+              modelvalue={this.props.skills}
+              onChangeModel={this.props.OnChangeSkills}
+            />           
+          </div>        
           <div className="button">
             <p></p>
             <Button buttonFunc={this.props.onPreviousClick}>Previous</Button>&nbsp; &nbsp; &nbsp; &nbsp;
             <Button buttonFunc={this.props.onNextClick}>Next</Button>
           </div>
-      </div>
+      </Col>
+      </Row>
       );
     }
   }

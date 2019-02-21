@@ -12,12 +12,16 @@ class Steps extends React.Component {
           fname: "",
           lname: "",
           email: "",
-          pass: "",
-          confirmpass: "",
+          address1: "",
+          address2: "",
+          city: "",
+          stateval: "",
+          zipcode: "",
           company: "",
           designation: "",
           role: "",
-          redirectToNewPage: false
+          exp: "",
+          skills: ""
         };
         this.goToNext = this.goToNext.bind(this);
         this.goToPrevious = this.goToPrevious.bind(this);
@@ -47,7 +51,7 @@ class Steps extends React.Component {
     render() {
      
       const maxLength = (len) => (len);
-      const isNumber = (val) => !isNaN(Number(val));
+      const required = (val) => val && val.maxLength > 0;
         switch (this.state.step) {
           case 1:
             return (
@@ -57,22 +61,30 @@ class Steps extends React.Component {
                 fnamemodel= ".memberInfo.fname"
                 lnamemodel=  ".memberInfo.lname"
                 emailmodel= ".memberInfo.email"
-                passmodel=".memberinfo.pass"
-                confirmpassmodel=".memberinfo.confirmpass"
+                addressmodel1= ".memberInfo.address1"
+                addressmodel2= ".memberInfo.address2"
+                citymodel = ".memberInfo.city"
+                statemodel = ".memberInfo.state"
+                zipcodemodel = ".memberInfo.zipcode"
                 fname= {this.state.fname}
                 lname= {this.state.lname}
                 email= {this.state.email}
-                pass={this.state.pass}
-                confirmpass={this.state.confirmpass}
+                address1={this.state.address1}
+                address2 = {this.state.address2}
+                city = {this.state.city}
+                stateval = {this.state.stateval}
+                zipcode={this.state.zipcode}
                 onChangeFname= {this.handleChange("fname").bind(this)}
                 onChangeLname= {this.handleChange("lname").bind(this)}
                 onChangeEmail= {this.handleChange("email").bind(this)}
-                onChangePass = {this.handleChange("pass").bind(this)}
-                onChangeConfirmPass= {this.handleChange("confirmpass").bind(this)}
+                onChangeAddress1 = {this.handleChange("address1").bind(this)}
+                onChangeAddress2 = {this.handleChange("address2").bind(this)}
+                onChangeCity = {this.handleChange("city").bind(this)}
+                onChangeStateVal = {this.handleChange("stateval").bind(this)}
+                onChangeZipCode= {this.handleChange("zipcode").bind(this)}
                 onNextClick = {this.goToNext}
-                // isRequired={required}
-               // passwordMatch = { maxLength(15)}
-                  />
+                isRequired={required}
+                />
             );
             case 2:
             return (
@@ -82,12 +94,18 @@ class Steps extends React.Component {
                 companymodel= ".jobInfo.company"
                 designationmodel = ".jobInfo.designation"
                 rolemodel=".jobInfo.role"
+                expmodel=".jobInfo.exp"
+                skillsmodel=".jobInfo.skills"
                 company= {this.state.company}
                 designation={this.state.designation}
                 role= {this.state.role}
+                exp =  {this.state.exp}
+                skills = {this.state.skills}
                 onChangeCompany= {this.handleChange("company").bind(this)}
                 onChangeDesignation = {this.handleChange("designation").bind(this)}
                 onChangeRole = {this.handleChange("role").bind(this)}
+                onChangeExp = {this.handleChange("exp").bind(this)}
+                OnChangeSkills = {this.handleChange("skills").bind(this)}
                 onPreviousClick = {this.goToPrevious}
                 onNextClick = {this.goToNext}
               />
