@@ -1,4 +1,4 @@
-<img src="app/images/multi step form.png" alt="multistepform" align="center" />
+<img src="app/images/multistepform.png" alt="multistepform" align="center" />
 
 <br />
 
