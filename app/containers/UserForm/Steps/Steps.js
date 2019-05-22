@@ -2,6 +2,7 @@ import React from 'react';
 import MemberInfo from './MemberInfo';
 import MemberJobInfo from './MemberJobInfo';
 import ReviewAndUpdate from './ReviewAndUpdate';
+import './user-form.css';
 
 class Steps extends React.Component {
     constructor() {

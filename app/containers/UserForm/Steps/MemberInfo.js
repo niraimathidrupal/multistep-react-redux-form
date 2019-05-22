@@ -9,7 +9,7 @@ import { Field, Errors } from 'react-redux-form/lib/immutable';
      
       const requiredInput = this.props.isRequired;
        return (<Row>
-         <Col md={6}>
+         <Col md={6} mdPush={3}>
         <h3>Employee Personal Information</h3>   
       
         <div className="field">

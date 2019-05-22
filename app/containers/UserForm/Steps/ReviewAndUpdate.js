@@ -21,7 +21,7 @@ class ReviewAndUpdate extends React.Component {
         return(
         <Grid>
           <Row>
-            <Col>
+            <Col md={8} mdPush={2}>
               <h3>Review And Update Your Information</h3>
               <Row className="memberinfo">
               <Col md={6}>        
@@ -37,7 +37,7 @@ class ReviewAndUpdate extends React.Component {
                 <p>{items.memberInfo.zipcode}</p>
                 <Button buttonFunc={this.props.onPersonalEdit}>Edit</Button>
               </Col>
-              <Col md={6}>        
+              <Col md={4} mdPush={2}>        
                 <h4>Employee Job Details</h4>
                 <p>Company name: {items.jobInfo.company}</p>
                 <p>Designation: {items.jobInfo.designation}</p>
@@ -52,7 +52,7 @@ class ReviewAndUpdate extends React.Component {
               </Row>
               <Row>        
                    
-              <Col md={6}> 
+              <Col className="button"> 
                 <Button buttonFunc={this.props.onPreviousClick}>Previous</Button>&nbsp; &nbsp; &nbsp; &nbsp;              
                 <Button buttonFunc={this.setRedirect}>Checkout</Button>
               </Col>

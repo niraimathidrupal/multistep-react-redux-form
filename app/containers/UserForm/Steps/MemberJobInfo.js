@@ -7,7 +7,7 @@ class MemberJobInfo extends React.Component {
     render() {
       return (
         <Row>
-         <Col md={6}>
+         <Col md={6} mdPush={3}>
           <h3>Employee Job Details</h3>
           <div className="field">
             <p></p>
